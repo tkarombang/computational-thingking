@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Pola Lingkaran</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+  }
+
+  .slider {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    text-align: center;
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  span {
+    font-size: 2rem;
+  }
+</style>
+
+<body>
+  <div class="slider">
+    <form action="" method="post">
+      <label for="angka">Pilih Lingkaran Ke</label>
+      <div>
+        <span class="awal"></span>
+        <input type="range" name="slider" id="slider" min="0" max="10">
+        <span class="akhir"></span>
+      </div>
+    </form>
+    <div class="container">
+
+    </div>
+  </div>
+  <script>
+    const slider = document.querySelector('#slider');
+    const awal = document.querySelector('.awal');
+    const akhir = document.querySelector('.akhir');
+
+    awal.innerHTML = slider.min;
+    akhir.innerHTML = slider.value;
+    let nilaiSlider;
+    slider.addEventListener('input', function () {
+      nilaiSlider = slider.value;
+      akhir.innerHTML = nilaiSlider;
+
+
+      function lingkaran(pola) {
+        const body = document.querySelector('.container');
+        let hasil = '';
+        for (let i = 1; i <= pola + 1; i++) {
+          for (let j = 1; j <= pola + 2; j++) {
+            hasil += '🟠';
+          }
+          hasil += '<br>';
+        }
+        // console.log(hasil);
+        body.innerHTML = hasil;
+      }
+      nilaiSlider -= 0;
+      console.log(nilaiSlider);
+      lingkaran(nilaiSlider);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Simons Says</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+    }
+
+    .wrapper {
+      border: 2px solid salmon;
+      height: 20rem;
+      width: 20rem;
+    }
+
+    .container {
+      border: 2px solid black;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      border: 2px solid black;
+      height: 50%;
+      width: 50%;
+      text-align: center;
+
+    }
+
+    .satu {
+      background-color: #ffd966;
+    }
+
+    .dua {
+      background-color: #6fa8dc;
+    }
+
+    .tiga {
+      background-color: #e06666;
+    }
+
+    .empat {
+      background-color: #93c47d;
+    }
+
+    #btn {
+      padding: 1rem 2rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: coral;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="box satu"></div>
+      <div class="box dua"></div>
+      <div class="box tiga"></div>
+      <div class="box empat"></div>
+    </div>
+    <button type="button" id="btn">PUSH</button>
+  </div>
+
+  <script type="text/javascript">
+    const button = document.getElementById('btn');
+    const box = document.querySelector('.container');
+    let deg = 0;
+    button.onclick = () => {
+      deg += 90;
+      console.log(box.style.transform);
+      box.style.transform = 'rotate(' + deg + 'deg)';
+    }
+  </script>
+</body>
+
+</html>
